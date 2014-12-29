@@ -1,0 +1,28 @@
+Colezea Madalin
+325CC
+Tema 2 PA
+
+Continut arhiva:
+- NumerePitiprime.java
+- Scrisori.java
+- Makefile
+- README
+
+Problema 1 
+	Am rezolvat problema generand toate numere ce se pot forma cu cifreme numarului primit ca input, cu unele restrictii pentru a reduce complexitatea, astfel:
+		- folosind recursivitatea plec de la solutii valide de o cifra si le generez pe cele de 2 cifre ,samd;
+		- solutiile valide de o cifra sunt 2, 3 ,5 si 7 - singurele numere pitiprime de o cifra;
+		- pentru solutiile de mai multe cifre elimin din lista cifrelor cu care as putea continua recursivitatea pe cele ce ar duce cu siguranta la o solutie nevalida (exp 0, 2, 5);
+		- astfel merg doar pe ramurile ce genereaza solutii valide;
+		- din toate solutiile valide gasite o returnez pe cea cu valoarea maxima;
+
+Problema 2 		
+	Rezolvarea se bazeaza pe parcurgerea grafului cu doua BFS-uri in paralel, unul din nodul 1 altul din nodul N;
+		- am retinut graful ca o lista de adiacenta, retinand doar arcele citite din fisier;
+		- am tratat special cazul cand A <= B si cand A>B;
+		- pentru cazul A > B execut cele doua BFS-uri pe graful format din arcele citite din fisier;
+		- pentru cazul A <= B execut cele doua BFS-uri pe graful format din arcele ce nu fac parte din cele citite din fisier;
+		- pentru ambele cazuri daca nu este gasit un drum minim este returnat maximul dintre A si B (legatura directa - arborele fiind complet);
+		- cele doua BFS-uri avanseaza in paralel pana cand ambele descopera un nod. Atunci drumul de cost minim este suma celor doua drumuri de la 1 la nod si de la N la nod;
+
+Detalii suplimentare despre implementare sunt date prin comentariile din cod;		
